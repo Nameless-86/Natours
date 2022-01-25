@@ -5,11 +5,13 @@
   "main": "app.js",
   "scripts": {
     "start:dev": "nodemon server.js",
-    "start:prod": "cross-env NODE_ENV=production nodemon server.js"
+    "start:prod": "cross-env NODE_ENV=production nodemon server.js",
+    "debug": "ndb server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^10.0.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.1",
@@ -20,11 +22,15 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.0.14",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "prettier": "^2.5.0",
     "slugify": "^1.6.3",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "ndb": "^1.1.5"
   }
 }

@@ -5,9 +5,10 @@ dotenv.config({ path: './config.env' });
 const app = require('./app');
 
 
-
-
-const DB = "mongodb+srv://Pet:123456a@natours-cluster.xbxkr.mongodb.net/test?authSource=admin&replicaSet=atlas-hm21x6-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true";
+const DB = process.env.DATABASE.replace(
+  '<PASSWORD>',
+  process.env.DATABASE_PASSWORD
+);
 
 dbConnect().catch(err => console.log(err));
 
@@ -16,7 +17,7 @@ async function dbConnect() {
   console.log("Connected");
 }
 
-
+console.log(process.env.NODE_ENV);
 
 const port = process.env.port || 5000;
 
